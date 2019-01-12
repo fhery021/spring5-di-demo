@@ -15,11 +15,18 @@ public class DiDemoApplication {
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
-		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 
+		System.out.println("fake data source");
 		System.out.println(fakeDataSource.getUser());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getUrl());
 
 		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
 		System.out.println(fakeJmsBroker.getUsername());
+		System.out.println("fake data source");
+		System.out.println(fakeJmsBroker.getUsername());
+		System.out.println(fakeJmsBroker.getPassword());
+		System.out.println(fakeJmsBroker.getUrl());
 	}
 }
